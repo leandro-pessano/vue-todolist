@@ -67,3 +67,23 @@ ul {
   border: 1px solid #1A1B1C;
   font-size: 150%;
 }
+
+#todo-list li i:hover {
+  color: lightgrey;
+  background-color: lightgrey;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#todo-trash li i {
+  color: lightgrey;
+  background-color: lightgrey;
+  border-radius: 50%;
+}
+
+#todo-trash li i:hover {
+  color: white;
+  background-color: transparent;
+  border-radius: 0;
+  cursor: pointer;
+}

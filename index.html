@@ -30,7 +30,7 @@
     <div id="todo-trash">
       <h2>Completed</h2>
       <ul>
-        <li v-for="(e, i) in removedToDo"><i @click="" class="far fa-circle"></i> {{ e }}</li>
+        <li v-for="(e, i) in removedToDo"><i @click="restoreToDo(i)" class="far fa-circle"></i> {{ e }}</li>
       </ul>
     </div>
 

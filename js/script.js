@@ -7,12 +7,18 @@ var vue = new Vue ({
   },
   methods: {
     addToDo() {
-      this.toDoList.push(this.input);
-      this.input = '';
+      if (this.input != '') {
+        this.toDoList.push(this.input);
+        this.input = '';
+      }
     },
     removeToDo(i) {
       this.removedToDo.push(this.toDoList[i]);
       this.toDoList.splice(i,1);
+    },
+    restoreToDo(i) {
+      this.toDoList.push(this.removedToDo[i]);
+      this.removedToDo.splice(i,1);
     }
   }
 });
