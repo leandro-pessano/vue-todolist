@@ -19,6 +19,12 @@ var vue = new Vue ({
     restoreToDo(i) {
       this.toDoList.push(this.removedToDo[i]);
       this.removedToDo.splice(i,1);
+    },
+    deleteToDo(i) {
+      this.removedToDo.splice(i,1);
+    },
+    deleteAll(i) {
+      this.removedToDo.splice(0)
     }
   }
 });

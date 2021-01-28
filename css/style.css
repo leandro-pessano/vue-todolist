@@ -13,6 +13,10 @@ h1 {
   font-size: 240%;
 }
 
+h2 {
+  display: inline-block;
+}
+
 ul {
   list-style: none;
 }
@@ -77,13 +81,25 @@ ul {
 
 #todo-trash li i {
   color: lightgrey;
+}
+
+#todo-trash i:hover{
+  color: grey;
+  cursor: pointer;
+}
+
+#todo-trash li i:first-child {
   background-color: lightgrey;
   border-radius: 50%;
 }
 
-#todo-trash li i:hover {
+#todo-trash li i:first-child:hover{
   color: white;
   background-color: transparent;
   border-radius: 0;
-  cursor: pointer;
+}
+
+#todo-trash li i:last-child {
+  line-height: 50px;
+  float: right;
 }
