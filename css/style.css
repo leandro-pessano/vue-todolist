@@ -53,6 +53,14 @@ ul {
   outline: 0;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: inline-block;
+}
+
 /* TO DO LIST */
 #todo-list {
   margin-bottom: 100px;
