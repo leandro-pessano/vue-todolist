@@ -1,12 +1,18 @@
 var vue = new Vue ({
   el: '#root',
   data: {
-    toDo: '',
-    toDoList : []
+    input: '',
+    toDoList : [],
+    removedToDo : []
   },
   methods: {
     addToDo() {
-      this.toDoList.push(this.toDo)
+      this.toDoList.push(this.input);
+      this.input = '';
+    },
+    removeToDo(i) {
+      this.removedToDo.push(this.toDoList[i]);
+      this.toDoList.splice(i,1);
     }
   }
 });

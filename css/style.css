@@ -3,3 +3,67 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #1A1B1C;
+  color: white;
+}
+
+h1 {
+  font-size: 240%;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin: 0 auto;
+  height: 100vh;
+  width: 50%;
+  text-align: center;
+}
+
+/* INPUT & BUTTON */
+.container input, .container button {
+  margin: 40px 0;
+  padding: 10px 20px;;
+  height: 50px;
+  background-color: #242424;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-size: 150%;
+}
+
+.container button {
+  font-weight: bold;
+}
+
+.container button:hover {
+  cursor: pointer;
+  background-color: #292929;
+}
+
+.container input:focus, .container button:focus {
+  outline: 0;
+}
+
+/* TO DO LIST */
+#todo-list {
+  margin-bottom: 100px;
+}
+
+#todo-list li, #todo-trash li {
+  margin: 0 auto;
+  padding: 0 10px;
+  height: 50px;
+  width: 50%;
+  line-height: 50px;
+  text-align: left;
+  background-color: #242426;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid #1A1B1C;
+  font-size: 150%;
+}
