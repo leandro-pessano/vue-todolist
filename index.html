@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
   <link rel="stylesheet" href="css/style.css">
@@ -15,20 +17,25 @@
 
     <!-- Input e Button -->
     <h1>Boolean To Do</h1>
-    <input v-model="input" @keydown.enter="addToDo" type="text">
+    <input id="input-todo" v-model="input" @keydown.enter="addToDo" type="text">
     <button @click="addToDo">+</button>
 
     <!-- Lista -->
     <div id="todo-list">
-      <h2>Tasks</h2>
+      <div>
+        <h2 :class="(toDoList.length > 0) ? 'show' : ''">Tasks</h2>
+        <i :class="(toDoList.length > 0) ? 'show' : ''" @click="removeAll" class="fas fa-check-square hide" title="Complete All"></i>
+      </div>
       <ul>
-        <li v-for="(e, i) in toDoList"><i @click="removeToDo(i)" class="far fa-circle"></i> {{ e }}</li>
+        <li v-for="(e, i) in toDoList"><i @click="removeToDo(i)" class="far fa-circle"></i> {{ e }} <i @click="editToDo(i)" class="fas fa-edit" title="Edit"></i></li>
       </ul>
     </div>
 
     <!-- Rimossi -->
     <div id="todo-trash">
-      <h2>Completed</h2> <i :class="(removedToDo.length > 0) ? 'show' : ''"@click="deleteAll" class="fas fa-eraser hide"></i>
+      <div>
+        <h2 :class="(removedToDo.length > 0) ? 'show' : ''">Completed</h2> <i :class="(removedToDo.length > 0) ? 'show' : ''" @click="deleteAll" class="fas fa-trash-alt hide" title="Delete All"></i>
+      </div>
       <ul>
         <li v-for="(e, i) in removedToDo"><i @click="restoreToDo(i)" class="far fa-circle"></i> {{ e }} <i @click="deleteToDo" class="fas fa-backspace"></i></li>
       </ul>

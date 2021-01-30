@@ -16,6 +16,17 @@ var vue = new Vue ({
       this.removedToDo.push(this.toDoList[i]);
       this.toDoList.splice(i,1);
     },
+    editToDo(i) {
+      this.input = this.toDoList[i];
+      this.toDoList.splice(i,1);
+      document.getElementById('input-todo').focus();
+    },
+    removeAll() {
+      this.toDoList.forEach((e, i) => {
+        this.removedToDo.push(this.toDoList[i]);
+      });
+      this.toDoList.splice(0);
+    },
     restoreToDo(i) {
       this.toDoList.push(this.removedToDo[i]);
       this.removedToDo.splice(i,1);
@@ -23,8 +34,11 @@ var vue = new Vue ({
     deleteToDo(i) {
       this.removedToDo.splice(i,1);
     },
-    deleteAll(i) {
+    deleteAll() {
       this.removedToDo.splice(0)
     }
+  },
+  mounted() {
+    document.getElementById('input-todo').focus();
   }
 });

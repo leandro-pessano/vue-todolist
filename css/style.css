@@ -7,14 +7,14 @@
 body {
   background-color: #1A1B1C;
   color: white;
+  font-family: 'Lato', sans-serif;
 }
 
 h1 {
+  padding: 10px;
   font-size: 240%;
-}
-
-h2 {
-  display: inline-block;
+  font-family: 'Fredoka One', cursive;
+  font-weight: normal;
 }
 
 ul {
@@ -24,7 +24,7 @@ ul {
 .container {
   margin: 0 auto;
   height: 100vh;
-  width: 50%;
+  width: 60%;
   text-align: center;
 }
 
@@ -61,9 +61,15 @@ ul {
   display: inline-block;
 }
 
-/* TO DO LIST */
-#todo-list {
-  margin-bottom: 100px;
+/* TO DO & TRASH */
+i.show {
+  padding: 10px;
+  font-size: 150%;
+}
+
+#todo-list div:first-child h2.show , #todo-trash div:first-child h2.show {
+  float: left;
+  padding-left: 15px;
 }
 
 #todo-list li, #todo-trash li {
@@ -80,13 +86,52 @@ ul {
   font-size: 150%;
 }
 
-#todo-list li i:hover {
+#todo-list li i , #todo-trash li i {
+  margin : 0 10px 0 5px;
+}
+
+#todo-list li i:last-child , #todo-trash li i:last-child {
+  line-height: 50px;
+  float: right;
+}
+
+#todo-list div:first-child , #todo-trash div:first-child {
+  margin: 10px auto;;
+  height: 50px;
+  width: 50%;
+  line-height: 50px;
+}
+
+#todo-list div:first-child i, #todo-trash div:first-child i {
+  float: right;
+  padding-top: 15px;
+  padding-right: 20px;
+}
+
+/* TO DO LIST */
+#todo-list {
+  margin-bottom: 100px;
+}
+
+#todo-list li i:not(:last-child):hover {
   color: lightgrey;
   background-color: lightgrey;
   border-radius: 50%;
+}
+
+#todo-list li i:last-child {
+  position: relative;
+  bottom: 1px;
+  font-size: 90%;
+  color: lightgrey;
+}
+
+#todo-list i:hover, #todo-list i:last-child:hover {
+  color: grey;
   cursor: pointer;
 }
 
+/* TRASH */
 #todo-trash li i {
   color: lightgrey;
 }
@@ -105,9 +150,4 @@ ul {
   color: white;
   background-color: transparent;
   border-radius: 0;
-}
-
-#todo-trash li i:last-child {
-  line-height: 50px;
-  float: right;
 }
